@@ -1,0 +1,39 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Aref+Ruqaa" rel="stylesheet">
+</head>
+
+<% if user_signed_in? %>
+    <div class="jumbotron jumbotron-home">
+        <div class="container">
+        <h1>Welcome Back!</h1>
+        </div>
+    </div>   
+<% else %>
+    <div class="jumbotron jumbotron-home">
+        <div class="container">
+            
+            <h1 style="font-family: 'Anton', sans-serif;">Search For Truth</h1>
+            <p>Reality Lies.</p>
+            <%= link_to "Learn more »", "#", class: "btn btn-primary btn-lg" %> 
+    </div>
+</div>
+   <% end %>
+ <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Everyone Lies</h2>
+            <p>Trust is not something given. It is earned. It is lost. </p>
+            <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+        </div>
+        <div class="col-md-4">
+            <h2>tHERE IS NO sPoon</h2>
+            <p>Humans are broken. Why do you keep relying on them? </p>
+            <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Truth... Watch Your Back</h2>
+            <p><iframe width="300" height="200" src="https://www.youtube.com/embed/V6wPTyUlKAE" frameborder="0" allowfullscreen></iframe></p>
+            <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+        </div>
+    </div>
+</div>

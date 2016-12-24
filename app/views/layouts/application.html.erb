@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Other People's Universes</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-dark bg-inverse">
+      <div class="container">
+        <%= link_to "One Month Rails", root_path, class: "navbar-brand" %>
+        <ul class="nav navbar-nav">
+          <li class="nav-item"><%= link_to "Home", root_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Contact", contactus_path, class: "nav-link" %>
+          <li class="nav-item"><%= link_to "Clues", clues_path, class: "nav-link" %></li>
+          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item float-md-right"><%= link_to "Log out", signout_path, method: :delete, class: "btn btn-primary" %></li>
+          <% else %>
+            <li class="nav-item float-md-right"><%= link_to "Sign in", signin_path, class: "btn btn-primary"%></li>
+            <li class="nav-item float-md-right"><%= link_to "Sign up", signup_path, class: "btn btn-primary" %></li>
+            <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Flash Message-->
+    <% flash.each do |name, message| %>
+    <%= content_tag(:div, message, class: "alert alert-info #{name}") %>
+    <% end %>
+
+    <!-- Page Content -->
+    <%= yield %>
+    
+    <!-- Footer -->
+    <footer class="small text-muted">
+      <div class="container">
+        <hr>
+        <center>
+          <p>© 2016 One Month</p>
+        </center>
+      </div>
+    </footer>
+
+  </body>
+</html>

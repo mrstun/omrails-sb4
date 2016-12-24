@@ -1,0 +1,20 @@
+<link href="https://fonts.googleapis.com/css?family=Athiti|Happy+Monkey|Inconsolata|Indie+Flower|Lobster|Titillium+Web" rel="stylesheet">
+<p id="notice"><%= notice %></p>
+<div style="border-style: dotted; text-align: center; background-color: #808080;">
+<% if user_signed_in? %>
+	<img class="card-img-top" src="http://media.giphy.com/media/jT9Q3YGdORcTC/giphy.gif" height="200" width="180">
+		<p style="font-size: .75em; font-family: 'Lobster'">
+	  User:
+	  <%= @clue.user %>
+	</p>
+
+	<p class="card-text;">
+	  <h4 style="font-family: 'Titillium Web';">Content:
+	  <%= @clue.content %></h4>
+	</p>
+	</div>
+<% if @clue.user == current_user %>
+	<%= link_to 'Edit', edit_clue_path(@clue) %> |
+<% end %>
+	<%= link_to 'Back', clues_path %>
+<% end %><br>
